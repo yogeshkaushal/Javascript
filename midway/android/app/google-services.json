@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "850937182689",
+    "firebase_url": "https://midway-850d1.firebaseio.com",
+    "project_id": "midway-850d1",
+    "storage_bucket": "midway-850d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850937182689:android:f85c5c3bec05be42",
+        "android_client_info": {
+          "package_name": "com.midway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850937182689-8jvg8j8ong1kv6jkqfj94a3idtjtbad3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxcH-RCr-wjKUSf8TTfNa_lDav4ab1C9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850937182689-8jvg8j8ong1kv6jkqfj94a3idtjtbad3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "850937182689-n52nd2t1ev5f7fqmtdf39so6apv5enup.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.Midway"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
