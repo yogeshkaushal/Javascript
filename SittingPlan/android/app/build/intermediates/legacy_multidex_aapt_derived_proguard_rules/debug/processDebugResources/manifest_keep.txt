@@ -1,0 +1,4 @@
+# Referenced at /home/zapbuild/Documents/ReactNativeProjects/sittingplan/SitingPlan/android/app/build/intermediates/merged_manifests/debug/x86_64/AndroidManifest.xml:18
+-keep class android.support.v4.app.CoreComponentFactory { <init>(); }
+# Referenced at /home/zapbuild/Documents/ReactNativeProjects/sittingplan/SitingPlan/android/app/build/intermediates/merged_manifests/debug/x86_64/AndroidManifest.xml:18
+-keep class com.sitingplan.MainApplication { <init>(); }

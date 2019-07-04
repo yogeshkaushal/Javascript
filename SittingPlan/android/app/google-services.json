@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "596471499590",
+    "firebase_url": "https://gangasittingplan.firebaseio.com",
+    "project_id": "gangasittingplan",
+    "storage_bucket": "gangasittingplan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596471499590:android:f014b31ad32cd144",
+        "android_client_info": {
+          "package_name": "com.sitingplan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596471499590-had5dffm2p4u52n1nircj56ubkv0alig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTGf8uup03X6IFOvt6CY2mpWf0YIEn9Nk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596471499590-had5dffm2p4u52n1nircj56ubkv0alig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
