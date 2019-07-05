@@ -1,4 +1,5 @@
-import { TouchableOpacity, Text, StyleSheet, View } from 'react-native'
+import { TouchableOpacity, Text, StyleSheet, View ,TextInput,
+FlatList} from 'react-native'
 import React from 'react'
 
 export default (props) => {
@@ -11,7 +12,7 @@ export default (props) => {
                     fontSize: 18,
                     paddingLeft: "4%",
                     borderRadius: 15,
-                    borderBottomWidth: this.state.btmWidth
+                    
                 }}
                 placeholder='Enter Employee email-id'
                 autoCapitalize={true}

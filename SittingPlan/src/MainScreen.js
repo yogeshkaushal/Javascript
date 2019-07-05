@@ -49,7 +49,7 @@ export default class MainScreen extends Component {
 
                     <TouchableOpacity
                         onPress={() => {
-                            this.props.navigation.navigate("SittingManagement")
+                            this.props.navigation.navigate("SitingManagement")
                         }}
                         style={[styles.touchable, styles.touchableSeats]}>
                         <Text style={styles.Text}>

@@ -135,9 +135,7 @@ export default class SittingManagement extends Component {
                                     return (<Picker.Item label={item.officeName} value={item} key={index} />)
                                 })
                             }
-
                         </Picker>
-
                         <TouchableOpacity
                             onPress={this.showDateTimePicker}
                             disabled={this.state.disabled}
@@ -430,7 +428,6 @@ export default class SittingManagement extends Component {
         this.setState({
             seatsArray: [...seatsArray3, ...seatsArray2]
         })
-        console.log('arrays is' + this.state.seatsArray)
     }
 
 
@@ -537,7 +534,6 @@ export default class SittingManagement extends Component {
                                 arr = [...arr, doc.data()]
                             });
                             arr = arr.sort(this.compare);
-                            // arr = this.bubbleSort(arr)
                             this.setState({
                                 listArray: [...this.state.listArray, ...arr],
                                 refreshing: false
@@ -552,7 +548,7 @@ export default class SittingManagement extends Component {
             })
     }
 
-    compare=(a, b)=> {
+    compare = (a, b) => {
         if (a.seat < b.seat) {
             return -1;
         }
@@ -585,10 +581,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    headerSecond: {
-        flexDirection: 'row',
-        borderWidth: 1,
-    },
+
     btnMain: {
         width: '60%',
         height: 40,
@@ -599,17 +592,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         borderRadius: 10,
     },
-    autocompleteContainer: {
-        flex: 1,
-        left: 10,
-        right: 10,
-        top: 70,
-        position: 'absolute',
-        zIndex: 1,
-        borderRadius: 15,
-        backgroundColor: 'white',
-        elevation: 5
-    },
+
     headerThird: {
         flexDirection: 'row',
         marginTop: 85,

@@ -7,11 +7,16 @@ import Office from './src/Office';
 import AddOffice from './src/AddOffice';
 import SittingManagement from './src/SittingManagement';
 import LoadingScreen from './src/LoadingScreen';
-
+import { createStore,applyMiddleware } from 'redux'
+import ReduxThunk from 'redux-thunk'
+import { Provider } from 'react-redux'
+import Reducer from './src/Reducer'
+import SitingManagement from './src/SitingManagement';
 const MainStack = createStackNavigator({
   Main: MainScreen,
   Office: Office,
   AddOffice: AddOffice,
+  SitingManagement:SitingManagement,
   SittingManagement: SittingManagement
 })
 
@@ -20,11 +25,16 @@ const AppNavigator = createSwitchNavigator({
   Login: LoginScreen,
   MainStack: MainStack
 })
+
 let Navigaion = createAppContainer(AppNavigator)
 export default class App extends Component {
+  
   render() {
+    const store = createStore(Reducer,{}, applyMiddleware(ReduxThunk))
     return (
-      <Navigaion />
+      <Provider store={store}>
+      <Navigaion/>
+      </Provider>
     );
   }
 }
