@@ -28,7 +28,7 @@ export  default (props)=>{
         </TouchableOpacity>
 
         <DateTimePicker
-            // isVisible={props.isVisible}
+            isVisible={props.isVisible}
             onConfirm={props.onConfirm}
             onCancel={props.onCancel}
         />

@@ -12,10 +12,8 @@ export default (props) => {
                     fontSize: 18,
                     paddingLeft: "4%",
                     borderRadius: 15,
-                    
                 }}
                 placeholder='Enter Employee email-id'
-                autoCapitalize={true}
                 onChangeText={(text) => {
                     props.onChangeText(text)
                 }}
@@ -39,7 +37,7 @@ export default (props) => {
                                 borderRadius: 15
                             }}
                             onPress={() => {
-                                props.onItemPress()
+                                props.onItemPress(item)
                             }}>
                             <Text style={{
                                 fontSize: 16,

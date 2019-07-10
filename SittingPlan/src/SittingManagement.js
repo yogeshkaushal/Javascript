@@ -21,8 +21,8 @@ import {
 } from './Component'
 import Spinner from 'react-native-loading-spinner-overlay'
 
-export default class SittingManagement extends Component {
 
+export default class SittingManagement extends Component {
     static navigationOptions = {
         title: "Sitting Arrangement",
         headerStyle: {
@@ -54,6 +54,7 @@ export default class SittingManagement extends Component {
 
     componentWillMount() {
         this.getOfficeDataFirebase()
+        // this.checkOnFirebase()
     }
 
     handleTextChange = (text) => {
@@ -82,6 +83,7 @@ export default class SittingManagement extends Component {
                         refreshing: false,
                         setName: data.employee
                     })
+                    console.table(data.employee)
                 } else {
                     this.setState({
                         refreshing: false
@@ -178,13 +180,12 @@ export default class SittingManagement extends Component {
                         }}
                         value={this.state.query}
                         listData={this.state.searchList}
-                        onItemPress={() => {
+                        onItemPress={(item) => {
                             Keyboard.dismiss()
                             this.setName(item)
                             this.setState({
                                 query: item,
                                 searchList: [],
-
                             })
                         }}
                     ></AutoCompleteInput>
@@ -364,10 +365,13 @@ export default class SittingManagement extends Component {
     }
 
     uploadArrayFirebase = () => {
+
         this.setState({
             refreshing: true
         })
-        this.uploadArrayFirebaseAsync()
+        this.checkOnFirebase()
+
+
             .then(res => {
                 this.setState({
                     localArray: [],
@@ -377,13 +381,38 @@ export default class SittingManagement extends Component {
             })
             .catch(err => console.log(err))
     }
-
+    checkOnFirebase = async () => {
+        let emailArr = []
+        const getDocId = await firebase.firestore().collection("offices").get()
+        const docId = getDocId.docs[0].id
+        await firebase.firestore().collection('offices').doc(docId).collection('seatAlotted')
+            .get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    emailArr = [...emailArr, doc.data().email]
+                });
+            })
+        for (let i = 0; i < this.state.localArray.length; i++) {
+            let exist = emailArr.indexOf(this.state.localArray[i].email)
+            if (exist != -1) {
+             console.log(this.state.localArray[i].email,'mail id')
+                await firebase.firestore().collection('offices')
+                    .doc(docId)
+                    .collection('seatAlotted')
+                    .where('email','==',this.state.localArray[i].email)
+                    .get()
+                    .then(querySnapshot => {
+                        console.log(querySnapshot.docs[0].data)
+                        querySnapshot.docs[0].ref.delete();
+                    })
+            }
+        }
+        await this.uploadArrayFirebaseAsync()
+    }
     uploadArrayFirebaseAsync = async () => {
         try {
             console.log(this.state.officeName.officeName)
             const querySnapshot = await firebase.firestore().collection("offices")
                 .where('officeName', '==', this.state.officeName.officeName).get()
-
             const docId = querySnapshot.docs[0].id
             let arrayFirebase = []
             for (let i = 0; i < this.state.localArray.length; i++) {

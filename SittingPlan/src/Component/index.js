@@ -9,5 +9,6 @@ export {
     SeatListComponent,
     EmployeeList,
     AutoCompleteInput,
-    DatePickComp
-} 
+    DatePickComp,
+    
+}

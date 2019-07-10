@@ -11,7 +11,7 @@ export default class LoadingScreen extends Component {
     componentWillMount() {
         setTimeout(()=>{
             this._retrieveData()
-        },1500)
+        },10)
 
     }
 
